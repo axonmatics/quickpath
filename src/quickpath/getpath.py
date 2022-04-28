@@ -32,10 +32,10 @@ class AllType(PathOpType):
 All = AllType()
 
 
-def getpath(item: Any, *index_terms: SequenceType[Any], default: Any = None) -> Any:
+def getpath(item: Any, index_terms: SequenceType[Any], default: Any = None) -> Any:
     """Returns a single value from an object hierarchy
 
-    getpath([{'id': 1}, {'id': 2}], 0, 'id') returns 1 (the value corresponds to the 'id' key in the first dict).
+    getpath([{'id': 1}, {'id': 2}], (0, 'id')) returns 1 (the value corresponds to the 'id' key in the first dict).
     The first element is always the expression referencing to the object root, then comes the rest of the keys.
     Mapping, sequence and generic objects are supported: mappings can be accessed with any type of keys, sequence types require integer keys,
     objects can be parametrized with string keys of their data attributes. If any of the keys, indexes, attributes
@@ -43,7 +43,7 @@ def getpath(item: Any, *index_terms: SequenceType[Any], default: Any = None) -> 
 
     Args:
         item: Any object hierarchy.
-        *index_terms: Any valid key value.
+        index_terms: Sequence of valid key values.
         defaut: Default value returned in case of missing keys/attributes.
 
     Returns:
@@ -93,10 +93,10 @@ def getpaths(item: Any, index_term_s: str, sep: str = ".", default: Any = None) 
     """
     index_tokens = index_term_s.split(sep)
     index_terms = ((int(token) if token.isdigit() else token) for token in index_tokens)
-    return getpath(item, *index_terms, default=default)
+    return getpath(item, index_terms, default=default)
 
 
-def getlistpath(item: Any, *index_terms: SequenceType[Any]) -> SequenceType[Any]:
+def getlistpath(item: Any, index_terms: SequenceType[Any]) -> SequenceType[Any]:
     item_to_proc = [item]
 
     for index_term in index_terms:
@@ -136,5 +136,5 @@ def getlistpaths(
         else:
             index_terms.append(term)
 
-    return getlistpath(item, *index_terms)
+    return getlistpath(item, index_terms)
 

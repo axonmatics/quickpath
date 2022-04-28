@@ -36,10 +36,10 @@ def getpath(item: Any, index_terms: SequenceType[Any], default: Any = None) -> A
     """Returns a single value from an object hierarchy
 
     getpath([{'id': 1}, {'id': 2}], (0, 'id')) returns 1 (the value corresponds to the 'id' key in the first dict).
-    The first element is always the expression referencing to the object root, then comes the rest of the keys.
+    The first element is always the expression referencing the object root, then comes the rest of the keys.
     Mapping, sequence and generic objects are supported: mappings can be accessed with any type of keys, sequence types require integer keys,
     objects can be parametrized with string keys of their data attributes. If any of the keys, indexes, attributes
-    do not exists, the default value is returned.
+    do not exist, the default value is returned.
 
     Args:
         item: Any object hierarchy.
@@ -77,10 +77,10 @@ def getpaths(item: Any, index_term_s: str, sep: str = ".", default: Any = None) 
     """Returns a single value from an object hierarchy
 
     getpath([{'id': 1}, {'id': 2}], '0.id') returns 1 (the value corresponds to the 'id' key in the first dict).
-    The first element is always the expression referencing to the object root, then comes a streing representation of the rest of the keys.
+    The first element is always the expression referencing the object root, then comes a string representation of the rest of the keys.
     Mapping, sequence and generic objects are supported: mappings can be accessed with string keys, sequence types require integer keys,
     objects can be parametrized with string keys of their data attributes. If any of the keys, indexes, attributes
-    do not exists, the default value is returned.
+    do not exist, the default value is returned.
 
     Args:
         item: Any object hierarchy.

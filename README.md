@@ -1,3 +1,8 @@
+# QuickPath
+
+QuickPath is a package, which provides functions for easy access the elements of collection/object structures.
+
+
 # Motivating example
 
 ```python

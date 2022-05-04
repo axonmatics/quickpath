@@ -106,10 +106,11 @@ for animal in animals:
 
 
 # Related Work:
-
-- DPath allow access embedded dicts with XPath like syntax; this is the closest approach to what I try to achive: https://github.com/dpath-maintainers/dpath-python
+- dotpath is a similar, but a bit simpler solution to the problem what this package tries to achive: https://github.com/silasvasconcelos/dotpath
+- DPath allow access embedded dicts with XPath like syntax: https://github.com/dpath-maintainers/dpath-python
 - Benedict is a dict only solution allowing dict with hierarchical keys: https://github.com/fabiocaccamo/python-benedict
-- Pathlib like syntax to query dictionaries: https://github.com/p1c2u/pathable
+- Dict-path is one more hierarchical dict solution: https://github.com/maztohir/dict-path
+- dictpath/pathable is provides a Pathlib like syntax to query dictionaries: https://github.com/p1c2u/pathable
 - XPath and jsonpath have many implementation, but XML and JSON representation is requeired, respectiely.
 - ObjectPath is a query language for to query object hierarchies interactively: http://objectpath.org/tutorial.html
 - PythonQL allows to query object but with a special syntax which converted to Python by a preprocessor: https://github.com/pythonql/pythonql
